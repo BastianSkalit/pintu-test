@@ -28,7 +28,7 @@ var runMiniSize = function () {
     ));
 };
 
-var runLargeRandom = function () {
+var runMaxRandom = function () {
     var a = [];
     for (var i = 0; i < 15000; i++) {
         a.push(0|Math.random() * 1000);
@@ -41,15 +41,15 @@ var runLargeRandom = function () {
         }
     }
     if (failures.length === 0) {
-        console.log("large sort success");
+        console.log("max sort success");
     } else {
-        console.log("large sort failed");
+        console.log("max sort failed");
         console.log(failures);
     }
 };
 
 
-var runLargeRandomWithStability = function () {
+var runMaxRandomWithStability = function () {
     var a = [];
     for (var i = 0; i < 15000; i++) {
         a.push({value: 0|Math.random() * 100, index:i});
@@ -67,9 +67,9 @@ var runLargeRandomWithStability = function () {
         }
     }
     if (failures.length === 0) {
-        console.log("large sort success");
+        console.log("max sort success");
     } else {
-        console.log("large sort failed");
+        console.log("max sort failed");
         console.log(failures);
     }
 };
@@ -79,6 +79,6 @@ var runLargeRandomWithStability = function () {
 if (require.main === module) {
     runBasic();
     runMiniSize();
-    //runLargeRandom();
-    runLargeRandomWithStability();
+    //runMaxRandom();
+    runMaxRandomWithStability();
 }
